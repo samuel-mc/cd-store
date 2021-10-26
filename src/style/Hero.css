@@ -1,0 +1,31 @@
+.hero {
+    display: flex;
+    justify-content: center;
+    /* margin: 24px; */
+    position: relative;
+}
+
+.hero__text {
+    background-color: rgba(0, 45, 64, 0.75);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    font-size: var(--lg);
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.hero__image {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.wave{
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
