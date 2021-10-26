@@ -7,7 +7,7 @@
 
 .hero__text {
     background-color: rgba(0, 45, 64, 0.75);
-    color: white;
+    color: var(--ligth);
     display: flex;
     flex-direction: column;
     font-size: var(--lg);
