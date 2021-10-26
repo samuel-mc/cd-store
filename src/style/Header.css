@@ -1,6 +1,8 @@
 .header {
     background-color: var(--dark-blue);
     color: var(--ligth);
+    grid-column-start: 1;
+    grid-column-end: 12;
 }
 
 .header__top {
