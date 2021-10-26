@@ -1,7 +1,23 @@
 .main__container {
     display: grid;
-    grid-template-columns: repeat(12, 64px);
-    gap: 32px;
-    margin: 0;
-    width: 100%;
 }
+
+@media (min-width: 320px) {
+    .main__container {
+        grid-column: 1/5;
+        grid-template-columns: repeat(4, minmax(60px, 162px));
+        gap: 24px;
+    }
+}
+
+/* @media (min-width: 720px) {
+    main {
+        grid-column: 1/9;
+    }
+}
+
+@media (min-width: 1024px) {
+    main {
+        grid-column: 1/13;
+    }
+} */

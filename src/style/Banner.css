@@ -1,12 +1,5 @@
-.banner{
-    margin: 24px 72px;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 32px;
-    text-align: center;
-}
-
 .banner__item {
+    align-items: center;
     background-color: #ffff;
     border-radius: 12px;
     display: flex;
@@ -15,17 +8,9 @@
     padding: 12px;
 }
 
-.item__title{
-    font-size: var(--md);
-}
-
 .item__price {
     font-size: var(--sm);
     color: var(--dark-blue);
-}
-
-.item__image {
-    width: 200px;
 }
 
 .item__button {
@@ -53,4 +38,54 @@
 .item__button:hover {
     background-color: var(--ligth-blue);
     cursor: pointer;
+}
+
+@media (min-width: 320px) {
+    .banner{
+        gap: 12px;
+        grid-column: 1/5;
+        text-align: center;
+    }
+    .banner__item {
+        margin: 12px;
+    }
+
+    .item__image {
+        width: 150px;
+    }
+
+    .item__title{
+        font-size: var(--sm);
+    }
+}
+
+@media (min-width: 720px) {
+    .banner{
+        grid-column: 2/8;
+        margin: 0;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        text-align: center;
+    }
+
+    .item__image {
+        width: 170px;
+    }
+
+    .item__title{
+        font-size: var(--md);
+    }
+}
+
+@media (min-width: 1024px) {
+    .banner{
+        grid-column: 2/12;
+        margin: -12px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        justify-content: stretch;
+        gap: 32px;
+        text-align: center;
+    }
 }

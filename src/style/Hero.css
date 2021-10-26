@@ -1,8 +1,10 @@
+/* ToDo: Pasar a css grid */
+
 .hero {
     display: flex;
     justify-content: center;
     position: relative;
-    grid-column: 1/13;
+    width: 100vw;
 }
 
 .hero__text {
@@ -28,4 +30,25 @@
     position: absolute;
     left: 0;
     bottom: 0;
+}
+
+@media (min-width: 320px) {
+    .hero {
+        grid-column: 1/5;
+    }
+    
+}
+
+@media (min-width: 720px) {
+    .hero {
+        grid-column: 1/9;
+    }
+    
+}
+
+@media (min-width: 320px) {
+    .hero {
+        grid-column: 1/10;
+    }
+    
 }

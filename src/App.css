@@ -2,3 +2,29 @@ body {
     background-color: var(--ligth);
     font-family: var(--font-family);
 }
+
+.app {
+    display: grid;
+    width: 100vw;
+}
+
+@media (min-width: 320px) {
+    .app {
+        grid-template-columns: repeat(4, minmax(60px, 162px));
+        gap: 24px;
+    }
+}
+
+@media (min-width: 720px) {
+    .app {
+        grid-template-columns: repeat(8, minmax(62px, 100px));
+        gap: 32px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .app {
+        grid-template-columns: repeat(12, minmax(54px, 1fr));
+        gap: 32px;
+    }
+}
