@@ -2,7 +2,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 import React from 'react'
 import Header from './components/Header'
-import Main from './containers/Main';
+import Home from './containers/Home';
 import Cart from './containers/Cart'
 
 import AppContext from './context/AppContex';
@@ -21,7 +21,7 @@ function App() {
         <BrowserRouter>
           <Header cart={cart} />
           <Switch>
-            <Route exact path="/" component={ Main }/>
+            <Route exact path="/" component={ Home }/>
             <Route exact path="/cart" component={ Cart }/>
           </Switch>
         </BrowserRouter>

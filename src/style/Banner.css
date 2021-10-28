@@ -42,16 +42,15 @@
 
 @media (min-width: 320px) {
     .banner{
-        gap: 12px;
-        grid-column: 1/5;
+        display:grid;
+        gap: 24px;
+        grid-template-columns: 1fr;
+        padding: 32px;
         text-align: center;
-    }
-    .banner__item {
-        margin: 12px;
     }
 
     .item__image {
-        width: 150px;
+        width: 100px;
     }
 
     .item__title{
@@ -61,11 +60,9 @@
 
 @media (min-width: 720px) {
     .banner{
-        grid-column: 2/8;
-        margin: 0;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
         gap: 20px;
+        grid-template-columns: repeat(2, 1fr);
+        padding: 48px;
         text-align: center;
     }
 
@@ -80,12 +77,8 @@
 
 @media (min-width: 1024px) {
     .banner{
-        grid-column: 2/12;
-        margin: -12px;
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        justify-content: stretch;
         gap: 32px;
-        text-align: center;
+        grid-template-columns: repeat(3, 1fr);
+        padding: 60px;
     }
 }

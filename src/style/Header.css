@@ -1,7 +1,7 @@
 .header {
     background-color: var(--dark-blue);
     color: var(--ligth);
-    position: static;
+    position: sticky;
     top: 0;
     z-index: 1;
 }
@@ -10,7 +10,6 @@
     display: grid;
     align-items: center;
     justify-items: center;
-    padding: 12px 0;
 }
 
 .header__top a{
@@ -49,14 +48,10 @@
 }
 
 @media (min-width: 320px) {
-    .header {
-        grid-column: 1/5;
-        width: 100vw;
-    }
-
     .header__top {
         grid-template-columns: repeat(4, minmax(62px, 162px));
         gap: 32px;
+        padding: 12px 0;
 
     }
 
@@ -77,14 +72,15 @@
 }
 
 @media (min-width: 720px) {
-    .header {
-        grid-column: 1/9;
-    }
-
     .header__top {
         grid-template-columns: repeat(8, minmax(62px, 100px));
         gap: 32px;
+        padding: 32px 0;
+        transition: padding 0.5s ease;
+    }
 
+    .header__top.active {
+        padding: 12px 0;
     }
 
     .header__title {
@@ -104,10 +100,6 @@
 }
 
 @media (min-width: 1024px) {
-    .header {
-        grid-column: 1/13;
-    }
-
     .header__top {
         grid-template-columns: repeat(12, 1fr);
         gap: 32px;
