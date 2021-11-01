@@ -1,26 +1,55 @@
 import React from 'react';
 import '../style/CartItem.css';
+import '../style/Cart.css';
+
+import AppContext from '../context/AppContex';
+
 
 const CartItem = ({ product }) => {
+    const { cart, setCart } = React.useContext(AppContext);
+
+    const handlePlus = (product) => {
+        let index = cart.findIndex(item => item.cd.id === product.cd.id);
+        cart[index].quantity++;
+        setCart([...cart]);
+    }
+
+    const handleMinus = (product) => {
+        let index = cart.findIndex(item => item.cd.id === product.cd.id);
+        if (cart[index].quantity === 1) {
+            cart.splice(index, 1);
+            setCart([...cart]);
+        } else {
+            cart[index].quantity > 1 && cart[index].quantity--;
+        }
+        setCart([...cart]);
+    }
+
+    const handleDelete = (product) => {
+        let index = cart.findIndex(item => item.cd.id === product.cd.id);
+        cart.splice(index, 1);
+        setCart([...cart]);
+    }
+
     return (
         <div className="cart-item">
             <div className="cart-item__info">
-                <h2>{product.cd.name}</h2>
-                <h3>{product.cd.artist}</h3>
-                <h4>{`$${product.cd.price}`}</h4>
+                <h3>{product.cd.name}</h3>
+                <h4>{product.cd.artist}</h4>
+                <h5>{`$${product.cd.price}`}</h5>
             </div>
-            
+
             <img className="cart-item__image" src={product.cd.image} alt={product.cd.image} />
 
             <div className="cart-item__buttons">
-                <button className="cart-item__button button__less"> - </button>
+                <button className="cart-item__button button__less" onClick={() => handleMinus(product)}> - </button>
                 <span className="cart-item__quantity"> {product.quantity}</span>
-                <button className="cart-item__button button__more"> + </button>
+                <button className="cart-item__button button__more" onClick={() => handlePlus(product)}> + </button>
             </div>
 
-            <h2>Total: {`$${product.cd.price*product.quantity}`}</h2>
+            <h3>Total: {`$${product.cd.price*product.quantity}`}</h3>
 
-            <button className="cart-item__trash">
+            <button className="cart-item__trash" onClick={() => handleDelete(product)}>
                 Eliminar
             </button>
 

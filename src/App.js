@@ -3,7 +3,8 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import React from 'react'
 import Header from './components/Header'
 import Home from './containers/Home';
-import Cart from './containers/Cart'
+import Cart from './containers/Cart';
+import Seller from './containers/Seller';
 
 import AppContext from './context/AppContex';
 import useInitialState  from './hooks/useInitialState';
@@ -23,6 +24,7 @@ function App() {
           <Switch>
             <Route exact path="/" component={ Home }/>
             <Route exact path="/cart" component={ Cart }/>
+            <Route exact path="/seller" component={ Seller }/>
           </Switch>
         </BrowserRouter>
       </AppContext.Provider>

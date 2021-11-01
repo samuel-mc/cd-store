@@ -1,7 +1,25 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 
 const useInitialState = () => {
-  const [cart, setCart] = useState([]);
+    const axios = require('axios').default;
+    const [cart, setCart] = useState([]);
+    const [artists, setArtists] = useState([]);
+    const [genres, setGenres] = useState([]);
+
+    React.useEffect(() => {
+        axios.get('http://localhost:8080/api/v1/artists')
+            .then(res => {
+                setArtists(res.data);
+            })
+            .catch(err => console.log(err))
+        axios.get('http://localhost:8080/api/v1/genres')
+                    .then(res => {
+                setGenres(res.data);
+            })
+            .catch(err => console.log(err))
+    }, []);
+
+
   const cds = [
       {
           id: 1,
@@ -54,6 +72,8 @@ const useInitialState = () => {
   ]
 
   return {
+    artists,
+    genres,
     cart,
     setCart,
     cds
