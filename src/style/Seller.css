@@ -1,0 +1,28 @@
+.seller__container{
+    font-size: var(--md);
+    margin: 32px auto;
+    width: 80%;
+}
+
+.seller__options {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 24px auto;
+}
+.seller__option {
+    background-color: var(--dark-blue);
+    border-radius: 16px;
+    color: var(--white);
+    font-size: var(--md);
+    padding: 32px;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.5s ease;
+    width: 40%;
+}
+
+.seller__option:hover {
+    background-color: var(--ligth-blue);
+    cursor: pointer;
+}

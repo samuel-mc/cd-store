@@ -1,0 +1,8 @@
+.confirm__buttons {
+    margin-top: 20px;
+}
+
+.confirm__buttons button {
+    margin: 8px;
+    width: 10%;
+}

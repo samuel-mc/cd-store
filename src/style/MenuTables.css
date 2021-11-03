@@ -1,0 +1,35 @@
+.artists__container {
+    margin: 32px 0;
+}
+
+.menu__table {
+    background-color: var(--white);
+    border-collapse: collapse;
+    border-spacing: 0;
+    border-radius: 8px;
+    margin: auto;
+    width: 50%;
+}
+
+.menu__table th {
+    font-size: var(--lg);
+    padding: 16px;
+    text-align: center;
+}
+
+.menu__table tr {
+    border-bottom: 1px solid var(--gray);
+}
+
+.menu__table td {
+    font-size: var(--md);
+    padding: 12px;
+    text-align: left;
+}
+
+.menu__add {
+    text-align: center;
+    margin: 24px;
+}
+
+

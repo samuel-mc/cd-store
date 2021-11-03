@@ -1,6 +1,8 @@
 import React from 'react'
-import AppContext from '../context/AppContex';
-import '../style/AddAlbum.css';
+import AppContext from '../../context/AppContex';
+import PrimaryButton from '../buttons/PrimaryButton';
+import SecondaryButton from '../buttons/SecondaryButton';
+import '../../style/ModalAlbum.css';
 
 const AddAlbum = () => {
 
@@ -22,11 +24,8 @@ const AddAlbum = () => {
     }
 
     return (
-        <div className="artist__form">
-            <form action="">
-                <div className="form__title">
-                    <h1>Agregar Album</h1>
-                </div>
+        <div className="album__modal">
+            <form action="" className="album__form">
                 <div className="form__item">
                     <label htmlFor="name">Titulo</label>
                     <input type="text" id="name" placeholder="El mejor disco del mundo"/>
@@ -43,13 +42,16 @@ const AddAlbum = () => {
                     <label htmlFor="description">Descripción</label>
                     <input type="text" id="desctiption" placeholder="Acá va una descripción ..."/>
                 </div>
-                <div className="form__item">
-                    <label htmlFor="price">Precio</label>
-                    <input type="number" id="price" min="0" step="0.1" placeholder="199.9"/>
-                </div>
-                <div className="form__item">
-                    <label htmlFor="stock">Stock</label>
-                    <input type="number" id="stock" min="0" step="1" placeholder="50"/>
+                <div className="form__item form__item--number">
+                    <div className="form__number">
+                        <label htmlFor="price">Precio</label>
+                        <input type="number" id="price" min="0" step="0.1" placeholder="199.9"/>
+                    </div>
+                    <div className="form__number">
+                        <label htmlFor="stock">Stock</label>
+                        <input type="number" id="stock" min="0" step="1" placeholder="50"/>
+                    </div>
+            
                 </div>
                 <div className="form__item">
                     <label htmlFor="stock">Artista</label>
@@ -92,7 +94,8 @@ const AddAlbum = () => {
                     </div>
                 </div>
                 <div className="form__button">
-                    <button type="button" className="button--save">Guardar</button>
+                    <PrimaryButton text="Guardar" />
+                    <SecondaryButton text="Cancelar" />
                 </div>
             </form>
         </div>

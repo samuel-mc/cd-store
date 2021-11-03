@@ -7,6 +7,10 @@ import AppContext from '../context/AppContex';
 const Main = () => {
     const { cart, setCart, cds } = React.useContext(AppContext);
 
+    React.useEffect(() => {
+        document.title = 'Discos Chidos'
+    })
+
     return (
         <>
             <main className="main__container">

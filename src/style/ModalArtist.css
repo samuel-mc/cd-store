@@ -1,0 +1,25 @@
+.artist__form {
+    display: flex;
+    flex-direction: column;
+}
+
+.artist__form label {
+    font-size: var(--md);
+    margin-bottom: 12px;
+}
+
+.artist__form input {
+    border: 1px solid var(--gray);
+    border-radius: 4px;
+    padding: 8px;
+    font-size: var(--sm);
+}
+
+.artist__form .modal__buttons {
+    text-align: center;
+}
+
+.artist__form button {
+    width: 30%;
+    margin: 8px;
+}

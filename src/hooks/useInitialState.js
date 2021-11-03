@@ -4,7 +4,9 @@ const useInitialState = () => {
     const axios = require('axios').default;
     const [cart, setCart] = useState([]);
     const [artists, setArtists] = useState([]);
+    const [albums, setAlbums] = useState([]);
     const [genres, setGenres] = useState([]);
+
 
     React.useEffect(() => {
         axios.get('http://localhost:8080/api/v1/artists')
@@ -17,6 +19,10 @@ const useInitialState = () => {
                 setGenres(res.data);
             })
             .catch(err => console.log(err))
+        axios.get('http://localhost:8080/api/v1/albums')
+            .then(res =>{
+                setAlbums(res.data);
+            })
     }, []);
 
 
@@ -72,6 +78,7 @@ const useInitialState = () => {
   ]
 
   return {
+    albums,
     artists,
     genres,
     cart,
