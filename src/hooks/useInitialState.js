@@ -79,6 +79,7 @@ const useInitialState = () => {
 
   return {
     albums,
+    setAlbums,
     artists,
     genres,
     cart,

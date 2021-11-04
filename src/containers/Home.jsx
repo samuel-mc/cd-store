@@ -5,7 +5,7 @@ import AppContext from '../context/AppContex';
 
 
 const Main = () => {
-    const { cart, setCart, cds } = React.useContext(AppContext);
+    const { cart, setCart, albums } = React.useContext(AppContext);
 
     React.useEffect(() => {
         document.title = 'Discos Chidos'
@@ -15,7 +15,7 @@ const Main = () => {
         <>
             <main className="main__container">
                 <Hero />
-                <Banner cart={cart} setCart={setCart} cds={cds} />
+                <Banner cart={cart} setCart={setCart} albums={albums} />
             </main>
         </>
     )

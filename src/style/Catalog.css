@@ -1,0 +1,20 @@
+.catalog__albums {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.catalog__album {
+    align-items: center;
+    background-color: var(--white);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 12px;
+    padding: 16px;
+}
+
+.catalog__album img {
+    width: 200px;
+    height: auto;
+}

@@ -8,7 +8,7 @@ const Cart = () => {
 
     React.useEffect(() => {
         let totalPrice = 0;
-        cart.map(item => totalPrice = totalPrice + (item.cd.price*item.quantity));
+        cart.map(item => totalPrice = totalPrice + (item.album.price*item.quantity));
         console.log('totalPrice', totalPrice);
         setTotal(totalPrice);
     }, [cart]);
@@ -21,7 +21,7 @@ const Cart = () => {
                         <h1> Carrito Vacio  </h1>
                         <a className="empty__link" href="/"> Ir al catalogo </a>
                     </div>
-                    : cart.map(product => <CartItem product={product} key={product.cd.id} />)
+                    : cart.map(product => <CartItem product={product} key={product.album.id_album} />)
             }
 
             {

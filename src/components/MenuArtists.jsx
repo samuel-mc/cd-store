@@ -32,7 +32,6 @@ const MenuArtists = () => {
 
     React.useEffect(() => {
         document.title = 'Menu Artistas'
-        console.log(artists);
     })
 
     return (
@@ -60,10 +59,10 @@ const MenuArtists = () => {
                                 <Link to="/"> Discografía</Link>
                             </td>
                             <td>
-                                <PrimaryButton text="Editar" action={() => handleshowArtistModal(artist)}/>
+                                <PrimaryButton text="Editar" action={() => handleshowArtistModal(artist)} size="sm"/>
                             </td>
                             <td>
-                                <SecondaryButton text="Eliminar" action={() => handleDelete(artist)} />
+                                <SecondaryButton text="Eliminar" action={() => handleDelete(artist)} size="sm"/>
                             </td>
                         </tr>
                     ))}

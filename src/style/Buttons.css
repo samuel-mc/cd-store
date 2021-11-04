@@ -5,8 +5,21 @@
     border-radius: 8px;
     font-family: var(--font-family);
     font-size: var(--sm);
-    padding: 8px;
     transition: all 0.3s ease;
+    padding: 8px;
+}
+
+.button--sm {
+    font-size: var(--sm);
+}
+
+.button--md {
+    font-size: var(--md);
+}
+
+.button--lg {
+    font-size: var(--lg);
+    margin: 8px;
 }
 
 .button:hover {
@@ -40,4 +53,9 @@
 
 .button--add:hover {
     background-color: var(--ligth-blue);
+}
+
+.button span svg {
+    height: var(--sm);
+    margin-left: 12px;
 }

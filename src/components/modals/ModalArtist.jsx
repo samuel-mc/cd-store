@@ -40,8 +40,8 @@ const ModalArtist = ({ setShowArtistModal, artist }) => {
                     onChange={(e) => handleChange(e)}
                     />
                 <div className="modal__buttons">
-                    <PrimaryButton text="Guardar" action={() => handleSave()}/>
-                    <SecondaryButton text="Cancelar" action={() => handleCancel()}/>
+                    <PrimaryButton text="Guardar" action={() => handleSave()} size="sm"/>
+                    <SecondaryButton text="Cancelar" action={() => handleCancel()} size="sm"/>
                 </div>
             </form>
         </Modal>

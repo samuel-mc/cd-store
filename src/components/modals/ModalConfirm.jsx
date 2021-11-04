@@ -14,8 +14,8 @@ const ModalConfirm = ({ setShowConfirmModal, action }) => {
         <Modal>
             <h1>¿Estás Seguro?</h1>
             <div className="confirm__buttons">
-                <PrimaryButton text="Sí" action={action}/>
-                <SecondaryButton text="No" action={() => handleClose()} />
+                <PrimaryButton text="Sí" action={action} size="sm"/>
+                <SecondaryButton text="No" action={() => handleClose()} size="sm"/>
             </div>
         </Modal>
     )

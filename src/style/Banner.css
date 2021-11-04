@@ -13,32 +13,6 @@
     color: var(--dark-blue);
 }
 
-.item__button {
-    align-items: center;
-    align-self: center;
-    background-color: var(--dark-blue);
-    border: 1px solid var(--ligth-blue);
-    border-radius: 8px;
-    color: var(--ligth);
-    display: flex;
-    font-family: var(--font-family);
-    font-size: var(--md);
-    justify-content: center;
-    margin: 4px 0;
-    padding: 8px;
-    transition: all 0.5s ease;
-    width: 70%;
-}
-
-.item__button span svg {
-    height: var(--sm);
-    margin-left: 12px;
-}
-
-.item__button:hover {
-    background-color: var(--ligth-blue);
-    cursor: pointer;
-}
 
 @media (min-width: 320px) {
     .banner{

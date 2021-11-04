@@ -3,6 +3,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import React from 'react'
 import Header from './components/Header'
 import Home from './containers/Home';
+import Catalog from './containers/Catalog';
 import Cart from './containers/Cart';
 import Seller from './containers/Seller';
 import MenuArtists from './components/MenuArtists';
@@ -25,6 +26,7 @@ function App() {
           <Header cart={cart} />
           <Switch>
             <Route exact path="/" component={ Home }/>
+            <Route exact path="/Catalog" component={ Catalog }/>
             <Route exact path="/cart" component={ Cart }/>
             <Route exact path="/seller" component={ Seller } />
             <Route exact path="/seller/artists" component={ MenuArtists }/>

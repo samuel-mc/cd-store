@@ -71,48 +71,24 @@
     color: var(--gray);
 }
 
+
 .form__item button {
-    background-color: var(--dark-blue);
-    border: none;
-    border-radius: 4px;
-    color: var(--ligth);
-    font-size: var(--sm);
     margin-left: 12px;
-    padding: 8px;
     width: 20%;
     transition: background-color 0.3s ease-in-out;
-}
-
-.form__item button:hover {
-    cursor: pointer;
-}
-
-.form__select .button--cancel{
-    background-color: var(--dark-red);
-}
-
-
-
-.button--save{
-    background-color: var(--dark-blue);
-    border: none;
-    border-radius: 8px;
-    color: var(--ligth);
-    font-size: var(--lg);
-    margin: 12px;
-    padding: 8px;
-    width: 40%;
-    transition: background-color 0.3s ease-in-out;
-}
-
-.button--save:hover{
-    background-color: var(--ligth-blue);
-    cursor: pointer;
 }
 
 .form__button {
     text-align: center;
 }
+
+.error {
+    color: var(--dark-red);
+    font-size: var(--sm);
+    margin-top: 4px;
+    display: block;
+}
+
 
 @keyframes slidein {
     from {

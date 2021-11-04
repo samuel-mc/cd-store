@@ -9,13 +9,13 @@ const CartItem = ({ product }) => {
     const { cart, setCart } = React.useContext(AppContext);
 
     const handlePlus = (product) => {
-        let index = cart.findIndex(item => item.cd.id === product.cd.id);
+        let index = cart.findIndex(item => item.album.id_album === product.album.id_album);
         cart[index].quantity++;
         setCart([...cart]);
     }
 
     const handleMinus = (product) => {
-        let index = cart.findIndex(item => item.cd.id === product.cd.id);
+        let index = cart.findIndex(item => item.album.id_album === product.album.id_album);
         if (cart[index].quantity === 1) {
             cart.splice(index, 1);
             setCart([...cart]);
@@ -26,7 +26,7 @@ const CartItem = ({ product }) => {
     }
 
     const handleDelete = (product) => {
-        let index = cart.findIndex(item => item.cd.id === product.cd.id);
+        let index = cart.findIndex(item => item.album.id_album === product.album.id_album);
         cart.splice(index, 1);
         setCart([...cart]);
     }
@@ -34,12 +34,12 @@ const CartItem = ({ product }) => {
     return (
         <div className="cart-item">
             <div className="cart-item__info">
-                <h3>{product.cd.name}</h3>
-                <h4>{product.cd.artist}</h4>
-                <h5>{`$${product.cd.price}`}</h5>
+                <h3>{product.album.title}</h3>
+                <h4>{product.album.artist.name}</h4>
+                <h5>{`$${product.album.price}`}</h5>
             </div>
 
-            <img className="cart-item__image" src={product.cd.image} alt={product.cd.image} />
+            <img className="cart-item__image" src={product.album.cover} alt="Album cover" />
 
             <div className="cart-item__buttons">
                 <button className="cart-item__button button__less" onClick={() => handleMinus(product)}> - </button>
@@ -47,7 +47,7 @@ const CartItem = ({ product }) => {
                 <button className="cart-item__button button__more" onClick={() => handlePlus(product)}> + </button>
             </div>
 
-            <h3>Total: {`$${product.cd.price*product.quantity}`}</h3>
+            <h3>Total: {`$${product.album.price*product.quantity}`}</h3>
 
             <button className="cart-item__trash" onClick={() => handleDelete(product)}>
                 Eliminar

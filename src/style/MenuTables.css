@@ -1,4 +1,4 @@
-.artists__container {
+.artists__container, .albums__container {
     margin: 32px 0;
 }
 
@@ -27,9 +27,32 @@
     text-align: left;
 }
 
+.menu__table td img {
+    border-radius: 50%;
+    height: 64px;
+    margin: auto;
+    width: 64px;
+}
+
 .menu__add {
     text-align: center;
     margin: 24px;
 }
 
+.menu__sort {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    margin: 24px;
+    margin-right: 15%;
+}
+
+.menu__sort select {
+    border-radius: 8px;
+    font-size: var(--sm);
+    margin-left: 12px;
+    margin-right: 12px;
+    padding: 8px;
+}
 
