@@ -26,7 +26,7 @@ const MenuArtists = () => {
     }
 
     const deleteArtist = () => {
-        axios.delete(`http://localhost:8080/api/v1/artists/${artist.id_artist}`)
+        axios.delete(`https://discos-chidos.herokuapp.com/api/v1/artists/${artist.id_artist}`)
         setShowConfirmModal(false);
     }
 

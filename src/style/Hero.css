@@ -5,16 +5,30 @@
 }
 
 .hero__text {
-    background-color: rgba(0, 45, 64, 0.75);
+    background-color: rgba(0, 45, 64, 0.9);
     color: var(--ligth);
     display: flex;
     flex-direction: column;
-    font-size: var(--lg);
     justify-content: center;
     align-items: center;
     position: absolute;
     width: 100%;
     height: 100%;
+}
+
+.hero__text span {
+    position: absolute;
+    top: 60%;
+    z-index: 1;
+}
+
+.hero__text span a {
+    color: var(--ligth-blue);
+    text-decoration: none;
+}
+
+.hero__text span a:hover {
+    text-decoration: underline;
 }
 
 .hero__image {
@@ -27,4 +41,16 @@
     position: absolute;
     left: 0;
     bottom: 0;
+}
+
+@media (min-width: 320px) {
+    .hero__text {
+        font-size: var(--sm);
+    }
+}
+
+@media (min-width: 1024px) {
+    .hero__text {
+        font-size: var(--lg);
+    }
 }

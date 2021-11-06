@@ -51,7 +51,7 @@ const MenuAlbums = () => {
     }
 
     const deleteAlbum = () => {
-        axios.delete(`http://localhost:8080/api/v1/albums/${album.id_album}`);
+        axios.delete(`https://discos-chidos.herokuapp.com/api/v1/albums/${album.id_album}`);
         setShowConfirmModal(false);
     }
 

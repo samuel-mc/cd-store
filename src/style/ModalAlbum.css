@@ -5,7 +5,7 @@
     position: absolute;
     top: 0;
     width: 100%;
-    z-index: 1;
+    z-index: 3;
 }
 
 .album__form{
@@ -34,7 +34,7 @@
     width: 45%;
 }
 
-.form__item input {
+.input {
     border: 1px solid var(--dark-blue);
     border-radius: 4px;
     font-size: var(--sm);
@@ -44,7 +44,7 @@
     margin-top: 4px;
 }
 
-.form__item input:focus{
+.input:focus{
     box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
     outline: none;
 }

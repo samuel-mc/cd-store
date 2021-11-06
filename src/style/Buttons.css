@@ -15,6 +15,7 @@
 
 .button--md {
     font-size: var(--md);
+    margin: 8px;
 }
 
 .button--lg {
@@ -56,6 +57,5 @@
 }
 
 .button span svg {
-    height: var(--sm);
     margin-left: 12px;
 }

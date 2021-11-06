@@ -9,17 +9,17 @@ const useInitialState = () => {
 
 
     React.useEffect(() => {
-        axios.get('http://localhost:8080/api/v1/artists')
+        axios.get('https://discos-chidos.herokuapp.com/api/v1/artists')
             .then(res => {
                 setArtists(res.data);
             })
             .catch(err => console.log(err))
-        axios.get('http://localhost:8080/api/v1/genres')
+        axios.get('https://discos-chidos.herokuapp.com/api/v1/genres')
                     .then(res => {
                 setGenres(res.data);
             })
             .catch(err => console.log(err))
-        axios.get('http://localhost:8080/api/v1/albums')
+        axios.get('https://discos-chidos.herokuapp.com/api/v1/albums')
             .then(res =>{
                 setAlbums(res.data);
             })

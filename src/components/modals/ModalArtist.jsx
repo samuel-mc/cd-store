@@ -16,9 +16,9 @@ const ModalArtist = ({ setShowArtistModal, artist }) => {
     const handleSave = () => {
         const body ={ name };
         artist.name === ''
-            ? axios.post(`http://localhost:8080/api/v1/artists/`, body)
+            ? axios.post(`https://discos-chidos.herokuapp.com/api/v1/artists/`, body)
                 .then( setShowArtistModal(false))
-            : axios.put(`http://localhost:8080/api/v1/artists/${artist.id_artist}/name`, body)
+            : axios.put(`https://discos-chidos.herokuapp.com/api/v1/artists/${artist.id_artist}/name`, body)
                 .then( setShowArtistModal(false))
     }
 

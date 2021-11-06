@@ -44,9 +44,9 @@ const AddAlbum = ({ setShowAlbumModal, album }) => {
         }
 
         if(album) {
-            axios.put(`http://localhost:8080/api/v1/albums/${album.id_album}`, data );
+            axios.put(`https://discos-chidos.herokuapp.com/api/v1/albums/${album.id_album}`, data );
         } else {
-            axios.post('http://localhost:8080/api/v1/albums', data);
+            axios.post('https://discos-chidos.herokuapp.com/api/v1/albums', data);
         }
 
         setShowAlbumModal(false);
@@ -66,6 +66,7 @@ const AddAlbum = ({ setShowAlbumModal, album }) => {
                 <div className="form__item">
                     <label htmlFor="title">Titulo</label>
                     <input
+                        className="input"
                         type="text"
                         id="title"
                         name="title"
@@ -80,6 +81,7 @@ const AddAlbum = ({ setShowAlbumModal, album }) => {
                 <div className="form__item">
                     <label htmlFor="year">Año</label>
                     <input
+                        className="input"
                         type="number"
                         id="year"
                         min="1950"
@@ -95,6 +97,7 @@ const AddAlbum = ({ setShowAlbumModal, album }) => {
                 <div className="form__item">
                     <label htmlFor="cover">URL de la Portada</label>
                     <input
+                        className="input"
                         type="text"
                         id="cover"
                         placeholder="http://www.image.com"
@@ -108,6 +111,7 @@ const AddAlbum = ({ setShowAlbumModal, album }) => {
                 <div className="form__item">
                     <label htmlFor="description">Descripción</label>
                     <input
+                        className="input"
                         type="text"
                         id="desctiption"
                         placeholder="Acá va una descripción ..."
@@ -122,6 +126,7 @@ const AddAlbum = ({ setShowAlbumModal, album }) => {
                     <div className="form__number">
                         <label htmlFor="price">Precio</label>
                         <input
+                            className="input"
                             type="number"
                             id="price"
                             min="0"
@@ -136,6 +141,7 @@ const AddAlbum = ({ setShowAlbumModal, album }) => {
                     <div className="form__number">
                         <label htmlFor="stock">Stock</label>
                         <input
+                            className="input"
                             type="number"
                             id="stock"
                             min="0"
@@ -155,6 +161,7 @@ const AddAlbum = ({ setShowAlbumModal, album }) => {
                         {addArtist
                         ?   <>
                                 <input
+                                    className="input"
                                     type="text" 
                                     id="name_artist" 
                                     placeholder="Ingrega el nombre" 
@@ -173,10 +180,10 @@ const AddAlbum = ({ setShowAlbumModal, album }) => {
                                     id="id_artist"
                                     hidden={addArtist}
                                     {...register("id_artist", { required: true, value: initialData.id_artist})}
-                                    value={initialData}
+                                    value={initialData.id_artist}
                                     onChange={(e) => handleChange(e)}
                                 >
-                                    <option value="">Seleccione un Artista</option>
+                                    <option value="0">Seleccione un Artista</option>
                                     {
                                         artists.length !== 0 && artists.artists.map(artist => <option value={artist.id_artist} key={artist.id_artist}>{artist.name}</option>)
                                     }
@@ -195,6 +202,7 @@ const AddAlbum = ({ setShowAlbumModal, album }) => {
 
                         ?   <>
                                 <input 
+                                    className="input"
                                     type="text"
                                     id="name_genre"
                                     placeholder="Ingresa el genero"
@@ -211,14 +219,14 @@ const AddAlbum = ({ setShowAlbumModal, album }) => {
                                     value={initialData.id_genre}
                                     onChange={(e) => handleChange(e)}
                                 >
-                                    <option value="">Seleccione un Género</option>
+                                    <option value="0">Seleccione un Género</option>
                                     {
                                         genres.length !== 0 && genres.map(genre => <option value={genre.id_genre} key={genre.id_genre}>{genre.name}</option>)
                                     }
                                 </select>
                                 <PrimaryButton text="Nuevo" action={() => setAddGenre(!addGenre)} size="sm" />
                                 { !album && errors.id_genre && <span className="error">Es necesario el género</span>}
-                            </>        
+                            </>
                         }
                     </div>
                 </div>
