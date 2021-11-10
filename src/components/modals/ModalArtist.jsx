@@ -5,7 +5,7 @@ import SecondaryButton from '../buttons/SecondaryButton';
 import '../../style/ModalArtist.css'
 const axios = require('axios').default;
 
-const ModalArtist = ({ setShowArtistModal, artist }) => {
+const ModalArtist = ({ setShowArtistModal, setLoading, artist }) => {
 
     if (!artist) artist = { id_artist: 0, name: ''};
 
@@ -20,6 +20,7 @@ const ModalArtist = ({ setShowArtistModal, artist }) => {
                 .then( setShowArtistModal(false))
             : axios.put(`https://discos-chidos.herokuapp.com/api/v1/artists/${artist.id_artist}/name`, body)
                 .then( setShowArtistModal(false))
+        setLoading(true);
     }
 
     const handleCancel = () => setShowArtistModal(false);

@@ -7,7 +7,7 @@ import '../../style/ModalAlbum.css';
 const axios = require('axios').default;
 
 
-const AddAlbum = ({ setShowAlbumModal, album }) => {
+const AddAlbum = ({ setShowAlbumModal, setLoading, album }) => {
 
     const { register, formState: { errors }, handleSubmit } = useForm();
 
@@ -50,6 +50,7 @@ const AddAlbum = ({ setShowAlbumModal, album }) => {
         }
 
         setShowAlbumModal(false);
+        setLoading(true);
     }
 
     const handleChange = (event) => {

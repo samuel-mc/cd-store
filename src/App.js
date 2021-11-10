@@ -1,4 +1,4 @@
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { Switch, Route, HashRouter } from 'react-router-dom';
 
 import React from 'react'
 import Header from './components/Header'
@@ -17,13 +17,13 @@ import './App.css';
 function App() {
 
   const initialState = useInitialState();
-  const { cart } = initialState;
+  const { cart, genres } = initialState;
 
   return (
     <div className="app">
       <AppContext.Provider value={initialState}>
-        <BrowserRouter>
-          <Header cart={cart} />
+        <HashRouter>
+          <Header cart={cart} genres={genres} />
           <Switch>
             <Route exact path="/" component={ Home }/>
             <Route exact path="/Catalog" component={ Catalog }/>
@@ -32,7 +32,7 @@ function App() {
             <Route exact path="/seller/artists" component={ MenuArtists }/>
             <Route exact path="/seller/albums" component={ MenuAlbums }/>
           </Switch>
-        </BrowserRouter>
+        </HashRouter>
       </AppContext.Provider>
     </div>
   );

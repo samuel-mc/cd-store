@@ -8,7 +8,7 @@ const AddCartButton = ({ album }) => {
 
     const handleAdd = (album) =>{
         let repeated = false;
-        cart.map (product => {
+        cart.forEach (product => {
             if (product.album.id_album === album.id_album) {
                 repeated = true;
             }

@@ -3,37 +3,22 @@ import { Link } from 'react-router-dom';
 import { FaShoppingCart } from "react-icons/fa";
 import '../style/Header.css';
 
-const categories = [
-    {
-        id: 1,
-        name: "Todos"
-    },
-    {
-        id: 2,
-        name: "Pop"
-    },
-    {
-        id: 3,
-        name: "Rock"
-    },
-    {
-        id: 4,
-        name: "Rap"
-    },
-]
-
-
-const Header = ({ cart }) => {
-
+const Header = ({ cart, genres }) => {
     const [ show, setShow ] = React.useState(true);
 
-    const handleScroll = () => {
-        window.scrollY === 0 && setShow(true);
-        window.scrollY > 90 && setShow(false);
-    }
+    const categories = genres.slice(0, 3)
 
-    window.addEventListener("scroll", handleScroll);
-    
+    React.useEffect(() => {
+        const handleScroll = () => {
+            window.scrollY === 0 && setShow(true);
+            window.scrollY > 90 && setShow(false);
+        }
+
+        document.addEventListener("scroll", handleScroll);
+        return () => document.removeEventListener("scroll", handleScroll);
+    })
+
+
     return (
         <header className="header">
             <div className={ show ? "header__top" : "header__top active"}>
@@ -53,13 +38,16 @@ const Header = ({ cart }) => {
             </div>
 
             <div className="header__bottom">
+            { genres &&
                 <ul className="header__categories">
+                     <li className="header__category"> Todos </li>
                     {
                         categories.map( category =>
                             <li className="header__category" key={category.id}>{category.name}</li>
                         )
                     }
                 </ul>
+            }
             </div>
         </header>
     );

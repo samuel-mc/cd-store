@@ -6,6 +6,7 @@ const useInitialState = () => {
     const [artists, setArtists] = useState([]);
     const [albums, setAlbums] = useState([]);
     const [genres, setGenres] = useState([]);
+    const [loading, setLoading] = useState(true);
 
 
     React.useEffect(() => {
@@ -22,8 +23,9 @@ const useInitialState = () => {
         axios.get('https://discos-chidos.herokuapp.com/api/v1/albums')
             .then(res =>{
                 setAlbums(res.data);
+                setLoading(false);
             })
-    }, []);
+    }, [loading]);
 
 
   const cds = [
@@ -81,10 +83,12 @@ const useInitialState = () => {
     albums,
     setAlbums,
     artists,
-    genres,
     cart,
     setCart,
-    cds
+    cds,
+    genres,
+    loading,
+    setLoading
   };
 };
 
