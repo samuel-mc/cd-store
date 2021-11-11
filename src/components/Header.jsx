@@ -40,10 +40,18 @@ const Header = ({ cart, genres }) => {
             <div className="header__bottom">
             { genres &&
                 <ul className="header__categories">
-                     <li className="header__category"> Todos </li>
+                     <li className="header__category">
+                        <Link to='/catalog'>
+                            Todos
+                        </Link>
+                     </li>
                     {
                         categories.map( category =>
-                            <li className="header__category" key={category.id}>{category.name}</li>
+                            <li className="header__category" key={category.id_genre}>
+                                <Link to={`/catalog/${category.id_genre}`}>
+                                    {category.name}
+                                </Link>
+                            </li>
                         )
                     }
                 </ul>

@@ -11,8 +11,7 @@ const CatalogAlbum = ({ albums }) => {
     }, [])
 
     const filteredAlbums = React.useMemo(() => 
-
-    albums.filter((album) =>{
+        albums.filter((album) =>{
             return album.title.toLowerCase().includes(searchValue) || album.artist.name.toLowerCase().includes(searchValue)
         }), [ albums, searchValue]
     )

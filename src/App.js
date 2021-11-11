@@ -26,7 +26,8 @@ function App() {
           <Header cart={cart} genres={genres} />
           <Switch>
             <Route exact path="/" component={ Home }/>
-            <Route exact path="/Catalog" component={ Catalog }/>
+            <Route exact path="/catalog" component={ Catalog }/>
+            <Route exact path="/catalog/:idGenre" component={ Catalog }/>
             <Route exact path="/cart" component={ Cart }/>
             <Route exact path="/seller" component={ Seller } />
             <Route exact path="/seller/artists" component={ MenuArtists }/>
